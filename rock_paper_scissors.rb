@@ -64,9 +64,9 @@ end
 def game_execute(your_pick)
   your_pick = your_pick.upcase
 
-  prng = Random.new
+  random_number = Random.new
 
-  computer_pick = GAME_OPTIONS[prng.rand(0..2)]
+  computer_pick = GAME_OPTIONS[random_number.rand(0..2)]
 
   your_pick_name = signal_name(your_pick)
   computer_pick_name = signal_name(computer_pick)
@@ -104,7 +104,7 @@ begin
   # validate input
   begin 
     say "Play again? (Y/N)"
-    ifcontinue = gets.chomp
-  end while !data_validation(choose = ifcontinue)
+    continue = gets.chomp
+  end while !data_validation(choose = continue)
 
-end while continue_next(ifcontinue)
+end while continue_next(continue)
